@@ -1,6 +1,7 @@
 import Reversi
 import Min_max
 import Select_Heuristique as Slct
+from termcolor import colored
 
 def human_play(board):
     try:
@@ -20,12 +21,23 @@ def HumanVsAI(board, depth, heuristic):
             _, move = Min_max.minmax3(board, depth, heuristic)
             board.push(move)
         elif board._nextPlayer == board._WHITE:
-            print(legal_moves)
+            for my_list in legal_moves:
+                # Utilisation de la notation de découpage pour imprimer [2, 3]
+                print(my_list[1:])
+            #print(legal_moves[1:])
             move = human_play(board)
             board.push(move)
         else:
             print("Erreur")
     print(board)
+    rslt = board._nbBLACK - board._nbWHITE
+    if board.is_tie():
+        print("Match nul")
+    elif rslt > 0:
+        print(colored("L'IA a gagné", "red"))
+    else:
+        print(colored("Vous avez gagné", "blue"))
+
 
 def main():
     board = Reversi.Board(10)

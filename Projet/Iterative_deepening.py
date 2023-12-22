@@ -12,7 +12,10 @@ def iterative_deepening(board, heuristique, max_time_seconds):
     while time.time() - start_time < max_time_seconds:
         best_move = Min_max.minmax3(board, max_depth, heuristique)[1]
         max_depth += 1
-
+    print("-------------------------------")
+    print(colored(f"max_depth: {max_depth}", "green"))
+    print(colored(f"best_move: {best_move}", "green"))
+    print("-------------------------------")
     return best_move
 
 def main():

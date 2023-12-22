@@ -1,7 +1,5 @@
 import time
-import Reversi
 import Min_max
-import random
 import IA_vs_RandMove as IVR
 import Select_Heuristique as Slct
 import Select_depth as Sld

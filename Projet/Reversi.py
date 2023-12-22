@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-
+from termcolor import colored
 ''' Fichier de règles du Reversi 
     Certaines parties de ce code sont fortement inspirée de 
     https://inventwithpython.com/chapter15.html
@@ -211,9 +211,9 @@ class Board:
 
     def _piece2str(self, c):
         if c==self._WHITE:
-            return 'O'
+            return colored('O', 'blue')
         elif c==self._BLACK:
-            return 'X'
+            return colored('X', 'red')
         else:
             return '.'
 

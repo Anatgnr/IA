@@ -6,9 +6,11 @@ Ce projet est l'aboutissement des TD d'IA et présente le code d'une IA qui perm
 
 ## Fonctionnalités
 
-- IA vs Random move
+- IA vs Random moves
 - IA vs Player
 - IA vs IA
+- Statistiques De IA vs Random moves
+- Iterartive deepening
 
 ## Installation
 
@@ -20,7 +22,8 @@ Installer termcolor, Pour des raison d'esthtétisme avec la commande:
 Les différentes parties du projets sont codées dans des fichiers distincts.
 Pour choisir ce que l'on veut jouer comme type de partie il suffit d'éxécuter la commande suivante:
     `python3 Select_game.py`
-Il sera proposé les différentes options de jeu et même une fonction de statistique pour tester une IA contre Random move
+Il sera proposé les différentes options de jeu et même une fonction de statistique pour tester une IA contre Random move.
+Attention lorsque l'on joue une partie contre l'IA, il faut absolument jouer un coup proposé dans la liste, sinon le programme plante :(
 
 
 ## Notes
