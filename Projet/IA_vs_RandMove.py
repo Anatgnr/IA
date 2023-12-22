@@ -3,8 +3,8 @@ import Reversi
 import Min_max
 import random
 import time
-import Heuristique
 import Select_Heuristique as Slct
+import Select_depth as SlctD
 from termcolor import colored
 
 # Dans ce fichier, on s'occupe de coder un simulateur de jeu
@@ -44,7 +44,7 @@ def play_game(player1, player2):
 #     play_game(lambda board: Min_max.minmax3(board, 2, heuristic(board))[1], random_move)
 #     return 
 
-def games(nb_games, depth):
+def games(nb_games, depth, heuristic):
     sum = 0
     start = time.time()
     match_result = []
@@ -53,7 +53,7 @@ def games(nb_games, depth):
         #Si les NOIRS gagnent, on ajoute 1 à la somme
         print(f"running game n°{i}")
         start2 = time.time()
-        play = play_game(lambda board:Min_max.minmax2(board, depth)[1] , random_move)
+        play = play_game(lambda board: Min_max.minmax3(board, depth, heuristic)[1] , random_move)
         # play = play_game(lambda board: Min_max.minmax(board, 2)[1], lambda board: Min_max.minmax2(board, 2)[1])
         if  play > 0:
             sum += 1
@@ -75,3 +75,10 @@ def games(nb_games, depth):
     print("".join(match_result))
 
 # games(10, 4, Heuristique.hNbPieces)
+    
+def main():
+    nb_games = int(input("Entrez le nombre de parties: "))
+    depth = SlctD.select_depth()
+    heuristic = Slct.select_heuristic()
+    games(nb_games, depth, heuristic)
+    return

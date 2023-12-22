@@ -28,8 +28,7 @@ def play_game(player1, player2):
     return rslt
 
 def main():
-    board = Reversi.Board(10)
     heuristic1 = Slct.select_heuristic()
     heuristic2 = Slct.select_heuristic()
-    play_game(lambda board: Min_max.minmax3(board, 2, heuristic1(board))[1], lambda board: Min_max.minmax3(board, 2, heuristic2(board))[1])
+    play_game(lambda board: Min_max.minmax3(board, 2, heuristic1)[1], lambda board: Min_max.minmax3(board, 2, heuristic2)[1])
     return 

@@ -17,7 +17,7 @@ def HumanVsAI(board, depth, heuristic):
         legal_moves = list(board.legal_moves())
         print(board)
         if board._nextPlayer == board._BLACK:
-            _, move = Min_max.minmax3(board, depth, heuristic(board))
+            _, move = Min_max.minmax3(board, depth, heuristic)
             board.push(move)
         elif board._nextPlayer == board._WHITE:
             print(legal_moves)
